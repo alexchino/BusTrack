@@ -15,7 +15,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Bustrack SV',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF1565C0), // Azul más profundo y moderno
+          brightness: Brightness.light,
+        ),
         useMaterial3: true,
       ),
       // Le decimos que la primera pantalla sea el Login
