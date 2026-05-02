@@ -69,11 +69,8 @@ class _EditarRutaPageState extends State<EditarRutaPage> {
                 setState(() {
                   rutasGlobales.removeAt(widget.indexRuta); // Eliminamos de la lista
                 });
-                Navigator.pop(context); // Cierra el diálogo
-                Navigator.pop(context, true); // Regresa al admin y avisa del cambio
-                ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text("Ruta eliminada"))
-                );
+                Navigator.pop(context);
+                Navigator.pop(context, true);
               },
               child: const Text("Eliminar", style: TextStyle(color: Colors.white)),
             ),

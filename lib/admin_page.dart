@@ -342,6 +342,9 @@ class _AdminPageState extends State<AdminPage> {
                                     // Si regresó con 'true' (se editó o eliminó), refrescamos la lista
                                     if (cambiosRealizados == true) {
                                       setState(() {});
+                                      ScaffoldMessenger.of(context).showSnackBar(
+                                        const SnackBar(content: Text("Ruta eliminada")),
+                                      );
                                     }
                                   },
                                 ),

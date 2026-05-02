@@ -15,14 +15,20 @@ class _RegisterPageState extends State<RegisterPage> {
 
   void _registrar() {
     if (_userC.text.isNotEmpty && _passC.text.isNotEmpty) {
-      // Guardamos el nuevo usuario en la lista global
+      bool yaExiste = usuariosRegistrados.any((u) => u.user == _userC.text);
+      if (yaExiste) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Ese nombre de usuario ya está en uso")),
+        );
+        return;
+      }
+
       usuariosRegistrados.add(Usuario(_userC.text, _passC.text));
 
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Usuario registrado con éxito")),
       );
 
-      // Regresa a la pantalla de Login
       Navigator.pop(context);
     }
   }
