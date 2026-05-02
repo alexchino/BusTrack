@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
       return;
     }
 
-    if (user == 'admin' && pass == '123') {
+    if (user == 'admin' && pass == 'admin123') {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const AdminPage()),
